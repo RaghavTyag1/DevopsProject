@@ -3,52 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to My DevOps Project</title>
+  <title>DevOps Project</title>
   <style>
+    /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #89fffd, #ef32d9);
-      color: #fff;
-      text-align: center;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      transition: background-color 0.3s ease;
     }
+
+    /* Header Styles */
     header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      font-size: 24px;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
     }
+
+    /* Content Section */
     main {
-      padding: 50px;
+      text-align: center;
+      padding: 1rem;
+      max-width: 600px;
     }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Button Styles */
     .button {
-      display: inline-block;
-      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
       padding: 10px 20px;
-      background-color: #ff5722;
+      font-size: 1rem;
       color: #fff;
-      text-decoration: none;
+      background-color: #28a745;
+      border: none;
       border-radius: 5px;
-      font-size: 18px;
-      transition: transform 0.3s;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
+
     .button:hover {
-      transform: scale(1.1);
+      background-color: #218838;
     }
+
+    .button span {
+      margin-left: 10px;
+    }
+
+    /* Footer */
     footer {
-      margin-top: 50px;
-      font-size: 14px;
-      opacity: 0.8;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
   <header>Welcome to My DevOps Project</header>
   <main>
-    <h1>Hello, World! 🌍</h1>
-    <p>This is a simple web page hosted on Vercel as part of my DevOps Class Project.</p>
-    <a href="#" class="button">Learn More</a>
+    <p>This is a simple webpage for demonstrating interactive features. Click the button below to complete the task!</p>
+    <button class="button" id="complete-button">
+      Completed <span>✔️</span>
+    </button>
   </main>
-  <footer>&copy; 2024 DevOps Project</footer>
+  <footer>&copy; 2024 My DevOps Project</footer>
+
+  <script>
+    // JavaScript to handle button click and background color change
+    const button = document.getElementById('complete-button');
+    button.addEventListener('click', () => {
+      // Change the background color
+      document.body.style.backgroundColor = '#d4edda'; // Light green for success feedback
+      // Optionally disable the button after clicking
+      button.disabled = true;
+      button.style.cursor = 'not-allowed';
+      button.style.backgroundColor = '#218838';
+      button.textContent = 'Task Completed ✔️';
+    });
+  </script>
 </body>
 </html>
